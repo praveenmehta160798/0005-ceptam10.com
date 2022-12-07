@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Ceptam10 Application</title>
+	<!-- FONT-AWESOME-CSS -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+	<!-- index css -->
+	<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+	<div class="screen-indicator">
+		This Website is viewable only in Landscape Mode.
+	</div>
+	<div class="container">
+		<div class="logo">
+			<img src="img/logo.png" alt="drdo_logo" title="Defence Reasearch & Development Organisation">
+		</div>
+		<div class="layer1"></div>
+		<div class="progress-bar">
+			<div class="progress-box">
+				<div class="progress-item progress-item1">
+					<i class="fa-solid fa-chevron-left"></i>
+				</div>
+
+				<div class="progress-item active progress-item2">1</div>
+				<div class="progress-item progress-item3">2</div>
+				<div class="progress-item progress-item4">3</div>
+				<div class="progress-item progress-item5">4</div>
+				<div class="progress-item progress-item6">5</div>
+				<div class="progress-item progress-item7">6</div>
+				<div class="progress-item progress-item8">7</div>
+
+				<div class="progress-item progress-item9">
+					<i class="fa-solid fa-chevron-right"></i>
+				</div>
+			</div>
+			<div class="progress-number">
+				1 out of 7
+			</div>
+		</div>
+		<div class="form-field">
+			<form action="">
+				<div class="head">
+					<div class="heading">पंजीकरण / Registration</div>
+					<div class="mandatory-msg">*अनिवार्य फील्ड्स / Mandatory Fields</div>
+				</div>
+				
+				<div class="form-control">
+					<label for="fname">अभ्यर्थी का पूरा नाम  /  Candidate's Full Name :<span class="mandatory-mark">*</span></label>
+					<div class="input">
+						<input type="text" name="fname" id="fname" oninput="fnameValidation(this)" onblur="blankCheck(this)" maxlength="30" autocomplete="off">
+						<div class="error-msg"></div>
+						<div class="input-msg">(10वीं/ मैट्रिक  के प्रमाण-पत्र के अनुसार)<br>(As per 10th/ Matriculation certificate )</div>
+					</div>
+				</div>
+
+				<div class="form-control">
+					<label for="name">अभ्यर्थी के नाम का पुष्टीकरण / Confirm Candidate's Full Name :<span class="mandatory-mark">*</span></label>
+					<div class="input">
+						<input type="text" name="cname" id="cname" oninput="cnameValidation(this)" onblur="blankCheck(this)" maxlength="30" autocomplete="off">
+						<div class="error-msg"></div>
+						<!-- <span class="input-msg"></span> -->
+					</div>
+				</div>
+
+				<div class="form-control">
+					<label for="name">मोबाइल नंबर / Mobile No:<span class="mandatory-mark">*</span></label>
+					<div class="input">
+						<div class="prefix">+91</div>
+						<input type="number" name="phone" id="phone" onblur="phoneValidation(this)" autocomplete="off">
+						<div class="error-msg"></div>
+						<div class="input-msg">(10 digits)</div>
+						<div class="input-msg">कृप्या आगे शून्य (0) ना लगायें / Please Do not prefix zero (0)</div>
+					</div>
+				</div>
+				
+				<div class="form-control">
+					<label for="name">मोबाइल नंबर की पुष्टि करें / Confirm Mobile No :<span class="mandatory-mark">*</span></label>
+					<div class="input">
+						<div class="prefix">+91</div>
+						<input type="number" name="phone" id="cphone" onblur="cphoneValidation(this)" autocomplete="off">
+						<div class="error-msg"></div>
+						<div class="input-msg">(10 digits)</div>
+						<div class="input-msg">कृप्या आगे शून्य (0) ना लगायें / Please Do not prefix zero (0)</div>
+					</div>
+				</div>
+				
+				<div class="form-control">
+					<label for="name">ई-मेल आई डी / Email ID:<span class="mandatory-mark">*</span></label>
+					<div class="input">
+						<input type="email" name="email" id="email" oninput="emailValidation(this)" onblur="blankCheck(this)" maxlength="50" autocomplete="off">
+						<div class="error-msg"></div>
+						<div class="input-msg"></div>
+					</div>
+				</div>
+				
+				<div class="form-control">
+					<label for="name">ई-मेल आई डी की पुष्टि करें / Confirm Email ID :<span class="mandatory-mark">*</span></label>
+					<div class="input">
+						<input type="email" name="email" id="cemail" oninput="cemailValidation(this)" onblur="blankCheck(this)" maxlength="50" autocomplete="off">
+						<div class="error-msg"></div>
+						<div class="input-msg"></div>
+					</div>
+				</div>
+				
+				<div class="form-control">
+					<label for="name">वैकल्पिक मोबाइल नंबर / Alternative Mobile Number:<span class="mandatory-mark">*</span></label>
+					<div class="input">
+						<div class="prefix">+91</div>
+						<input type="number" name="phone" id="aphone" onblur="aphoneValidation(this)" oninput="phoneValidation(this)" autocomplete="off">
+						<div class="error-msg"></div>
+						<div class="input-msg">(10 digits)</div>
+					</div>
+				</div>
+				
+				<div class="form-control">
+					<!-- <label for="name"><span class="mandatory-mark">*</span></label>
+						<div class="input">
+						<input type="text">
+						<div class="input-msg"></div>
+					</div> -->
+				</div>
+				
+				<div class="form-control">
+					<label for="name"><span class="mandatory-mark"></span></label>
+					<div class="input">
+						<!-- <input type="text"> -->
+						<div class="note">छवि में प्रदर्शित अक्षर टेक्स्टबोक्स में दर्ज करें / Enter the characters in the textbox as displayed in the image</div>
+					</div>
+				</div>
+				
+				<div class="form-control">
+					<label for="name">सुरक्षा कोड / Security Code  :<span class="mandatory-mark">*</span></label>
+					<div class="input">
+						<input type="text" maxlength="5" name="captcha" id="captcha" oninput="captchaValidation(this)">
+						<div class="error-msg"></div>
+						<!-- <div class="input-msg"></div> -->
+						<div class="captcha-box">
+							<div class="captcha-img">
+								<img src="img/captcha-img/captcha01.png" alt="">
+							</div>
+							<div class="captcha-refresh" onmousedown="randomCaptcha(this)">
+								<img src="img/captcha-refresh.png" alt="">
+							</div>
+						</div>
+					</div>
+				</div>
+			</form>
+			<div class="btns">
+				<button class="register-btn btn" onclick="validateAll()">Register</button>
+			</div>
+		</div>
+		<div class="layer2"></div>
+	</div>
+	<script src="script.js"></script>
+</body>
+
+</html>
